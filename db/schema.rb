@@ -11,15 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150208164232) do
+ActiveRecord::Schema.define(version: 20150210061439) do
 
   create_table "nodes", force: :cascade do |t|
-    t.string   "topic"
+    t.string   "name"
     t.string   "description"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.integer  "nodable_id"
-    t.string   "nodable_type"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "parent_id"
   end
+
+  add_index "nodes", ["parent_id"], name: "index_nodes_on_parent_id"
 
 end

@@ -1,3 +1,94 @@
 // Place all the styles related to the nodes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// body{
+//   background-color: #E4F1FE;
+// }
+.projects_index{
+  border: 1px solid black;
+  height: 100px;
+  background-color: #2574A9;
+  display: inline;
+  margin: 15px;
+  &:hover{
+    background-color: #4891C2;
+  }
+}
+
+#projects{
+
+  .row{
+
+    .col-md-3{
+      text-align: center;
+    }
+
+    li{
+      list-style: none;
+      color: white;
+
+    }
+  }
+}
+
+.btn-default{
+  color: white;
+  &:hover{
+    color: white;
+  }
+}
+
+.new_project{
+  border: 1px solid black;
+  height: 100px;
+  background-color: #061722;
+  display: inline;
+  margin: 15px;
+  &:hover{
+    background-color: #2574A9;
+
+  }
+
+}
+
+//show//
+
+.name_des{
+  width: 100%;
+  background-color: #2574A9;
+  text-align: center;
+  &:hover{
+      background-color: #2574A9;
+  }
+}
+
+.name{
+  font-size: 2em;
+  color: white;
+  display: block;
+}
+
+.desc{
+  font-size: 1em;
+  color: white;
+  display: block;
+
+}
+
+#child_projects{
+
+  .row{
+    text-align: center;
+
+    .col-md-3{
+      text-align: center;
+    }
+
+    li{
+      list-style: none;
+      color: white;
+
+    }
+  }
+}

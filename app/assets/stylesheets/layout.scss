@@ -1,0 +1,16 @@
+//header//
+
+.navbar-default{
+text-align: center;
+background-color: #2574A9;
+font-size: 2em
+}
+
+.logo{
+  text-decoration: none;
+  color: white;
+  &:hover{
+    text-decoration: none;
+    color: #D4EBFA
+  }
+}

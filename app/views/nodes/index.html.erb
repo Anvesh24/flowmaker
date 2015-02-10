@@ -5,13 +5,21 @@
 
 
 <ul id="projects">
+<div class="row">
 
 <% @nodes.each do |node| %>
 
-<li> <%=  link_to node.topic, node_path(node), class: 'projects_index', id: "node_#{node.id}" %> </li>
+<li> <%=  link_to node.name, node_path(node), class: 'projects_index col-md-3 btn btn-default btn-lg', id: "node_#{node.id}" %> </li>
 
 <% end %>
 
+
+
+
+
+<li><%= link_to "Create New Project", new_node_path, class: "new_project col-md-3 btn btn-default btn-lg" %> </li>
+
+
 </ul>
 
-<%= link_to "Create New Project", new_node_path, class: "new_project" %>
+</div>

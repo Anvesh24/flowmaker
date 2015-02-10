@@ -1,7 +1,37 @@
-<h2><%= @node.topic %></h2></br>
-<%= @node.description %></br>
+
+<div class="name_des">
+
+<div class="name"><%= @node.name %></div>
+<div class="desc"> <%= @node.description %> </div>
+
+</div>
+
+<% if @node.parent %>
+  <%= link_to "<< Previous", node_path(@node.parent) %> </br>
+<% end %>
+<%= link_to "<< dashboard", root_path %> </br>
+
+<ul id="child_projects">
+<div class="row">
+
+<% @children.each do |node| %>
+
+<li> <%=  link_to node.name, node_path(node), class: 'projects_index col-md-3 btn btn-default btn-lg', id: "node_#{node.id}" %> </li>
+
+<% end %>
+
+</ul>
+</div>
 
 
-<%= link_to "<< dashboard", root_path %>
+<h1>Create a New Node</h1>
 
-<%= link_to "Create New Project", new_node_path, class: "new_project" %>
+<%= simple_form_for @new_node do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :parent_id, as: :hidden %>
+  <%= f.button :submit %>
+<% end %>
+
+
+

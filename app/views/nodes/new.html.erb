@@ -1,16 +1,8 @@
 <h1>Create a New Node</h1>
 
-<%= form_for(@node) do |f| %>
-  
-  <p>
-    <%= f.label :topic %><br />
-    <%= f.text_field :topic %>
-  </p>
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
+<%= simple_form_for @new_node do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :parent_id, as: :hidden %>
+  <%= f.button :submit %>
 <% end %>
