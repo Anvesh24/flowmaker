@@ -29,3 +29,6 @@ end
 
 gem 'bootstrap-sass'
 gem 'simple_form'
+gem 'devise'
+gem 'omniauth-facebook'
+gem 'dotenv-rails'

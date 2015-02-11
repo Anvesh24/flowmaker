@@ -1,4 +1,5 @@
 class NodesController < ApplicationController
+  
 
   def new
     @new_node = Node.new
