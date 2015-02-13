@@ -55,6 +55,7 @@
 //show//
 
 .name_des{
+  border-radius: 5px;
   width: 100%;
   background-color: #2574A9;
   text-align: center;
@@ -91,4 +92,13 @@
 
     }
   }
+}
+
+.btn-default{
+  background-color: #2574A9;
+}
+
+.bgcl{
+  background-color: white;
+  color: black;
 }

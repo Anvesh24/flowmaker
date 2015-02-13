@@ -3,7 +3,7 @@
 .navbar-default{
 text-align: center;
 background-color: #2574A9;
-font-size: 2em
+font-size: 2em;
 }
 
 .logo{
@@ -11,6 +11,34 @@ font-size: 2em
   color: white;
   &:hover{
     text-decoration: none;
-    color: #D4EBFA
+    color: #D4EBFA;
   }
+}
+
+
+.image_tag{
+  border-radius: 50%;
+  display: inline;
+}
+
+.username{
+  color: white;
+  font-size: .6em;
+  display: inline;
+  margin-right: 5px;
+}
+
+.signout{
+  font-size: .6em;
+  color: white;
+  display: inline;
+  margin-right: 5px;
+  &:hover{
+    text-decoration: none;
+    color: rgb(216, 206, 206);
+  }
+}
+
+#current_user{
+  display: inline;
 }

@@ -3,7 +3,13 @@
    
     <%= link_to  "Flow Maker", root_path, class: "logo"%>
 
-   
+   <div id="current_user" class="pull-right">
+   <% if user_signed_in?  %>
+     <%= image_tag current_user.image, class: 'pull-left image_tag' %>
+     <%= content_tag :div, current_user.name, class: "username" %>
+     <%= link_to "Signout", destroy_user_session_path, method: :delete, class: "signout"  %>
+    <% end %>
+  </div>
     
   </div>
 </nav>

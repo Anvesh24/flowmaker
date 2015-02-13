@@ -20,7 +20,9 @@ class NodesController < ApplicationController
   def create
 
     @node = Node.create(node_params)
+  
     redirect_to node_path(@node)
+
 
     # @parent = Node.find(params[:id])
     # @node = @parent.nodes.new(params[:node])
