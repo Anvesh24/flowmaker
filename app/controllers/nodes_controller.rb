@@ -2,24 +2,24 @@ class NodesController < ApplicationController
   
 
   def new
-    @new_node = Node.new
+    @new_node = current_user.node.new
 
   end
 
   def index
-    @nodes = Node.root
-    @new_node = Node.new  
+    @nodes =current_user.nodes.root
+    @new_node = current_user.nodes.new  
   end
 
   def show
-    @node = Node.find(params[:id])
+    @node = current_user.nodes.find(params[:id])
     @children = @node.children.all
     @new_node = @node.children.new
   end
 
   def create
 
-    @node = Node.create(node_params)
+    @node = current_user.nodes.create(node_params)
   
     redirect_to node_path(@node)
 
@@ -34,10 +34,29 @@ class NodesController < ApplicationController
       
   end
     
-    # @node = Node.new(node_params)
-    # @node.save
-    # redirect_to node_path(@node)
-    
+  def destroy
+
+    @node =current_user.nodes.find(params[:id])
+    @node.destroy
+
+    redirect_to @node.parent if @node.parent
+    redirect_to root_path
+  end
+
+  def edit
+    @node = current_user.nodes.find(params[:id])
+  end
+
+  def update
+    @node = current_user.nodes.find(params[:id])
+    if @node.update_attributes(node_params)
+      
+      redirect_to @node
+    else
+      render 'edit'
+    end
+  end
+  
   
 
   private
